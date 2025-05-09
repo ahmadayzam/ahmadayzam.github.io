@@ -1,245 +1,94 @@
-
+<!doctype html>
 <html>
 <head>
-<title>Ahmad Kouti</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset='utf-8'>
+	<meta name='viewport' content='width=device-width, initial-scale=1'>
+	<title>Ahmad Kooti</title>
+<link href='https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css' rel='stylesheet'>
+<link href='https://use.fontawesome.com/releases/v5.8.1/css/all.css' rel='stylesheet'>
 <style>
-* {
-	line-height: 2.5;
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+   background: #f1f1f1; 
+}
+::-webkit-scrollbar-thumb {
+    background: #888; 
+}
+::-webkit-scrollbar-thumb:hover {
+background: #555; 
 }
 body {
-	background: #454545;
-	background-size: 400% 400%;
-	animation: gradient 15s ease infinite;
-	direction: rtl;
-	text-align: center;
-	color: #43483e;
-	margin: 0;
-	padding: 0;
-	overflow: hidden;
-	font-size: 1.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: linear-gradient(50deg, #0f4565 0%, #8c5169 100%);
+  margin: 0;
 }
-@keyframes gradient {
-    0% {
-        background-position: 0% 50%;
-    }
-    
-	50% {
-        background-position: 100% 50%;
-    }
-
-    100% {
-        background-position: 0% 50%;
-    }
+.card-glass {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  color: white;
+  transition: transform 0.3s ease;
 }
-@keyframes run {
-    0%, 100% {
-        top: 1%;
-		left: 1%;
-    }
-
-    25% {
-        top: 90%;
-		left: 90%;
-    }
-
-    50% {
-        top: 90%;
-		left: 1%;
-    }
-
-    75% {
-        top: 1%;
-		left: 90%;
-    }
-}
-.bg {
-	animation: run 240s ease infinite;
-	position: absolute;
-	top: 0;
-	left: 0;
-	z-index: -1;
-	width: 100vw;
-	height: 100vh;
-	user-select: none;
-}
-span {
-	color: #999072;
-	position: absolute;
-	top: 0;
-	left: 0;
-	font: 1rem tahoma;
-	display: inline-block;
-}
-.card {
-	background: #ffffff;
-	box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.125);
-	border-radius: 2rem;
-}
-.card-header {
-	background: #e3e3e3;
-	border-radius: 2rem 2rem 0 0;
-}
-.card-title {
-	margin: 0;
-	font-size: 2.2rem;
-}
-.card-body {
-	padding: 0 1rem;
-}
-a {
-	background: #bbdefb;
-	color: #7e7e7e;
-	animation: gradient 5s ease infinite;
-	border-radius: 5rem;
-	text-decoration: none;
-	font-size: 2rem;
-	display: inline-block;
-	box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.125);
-}
-a:hover svg,
-.card-body:not(:hover){
-	fill: #999;
-}
-svg {
-	fill: #fff;
-}
-a[href*="instagram"] {
-	top: 50%;
-	left: -1rem;
-	transform: translate(-100%, calc(-150% - 1rem));
-	background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+.social-icons a {
+  font-size: 28px;
+  color: #fff;
+  transition: color 0.3s, transform 0.3s;
 }
 
-a[href*="t.me"] {
-	top: 50%;
-	left: -1rem;
-	transform: translate(-100%, -50%);
-	background: linear-gradient(0, #0088CC, #22aaee);
+.social-icons .facebook:hover {
+  color: #3b5998;
+  transform: scale(1.2);
+  cursor: pointer;
 }
-a[href*="wa.me"] {
-	top: 50%;
-	left: -1rem;
-	transform: translate(-100%, calc(50% + 1rem));
-	background: linear-gradient(0, #11cc55, #25D366);
+
+.social-icons .twitter:hover {
+  color: #1da1f2;
+  transform: scale(1.2);
+  cursor: pointer;
 }
-a[href*="tel:"] {
-	text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.25);
-    animation: gradient 5s ease infinite;
-	position: relative;
-	padding: 0 1rem;
-	margin-bottom: 1rem;
-	border-radius: 2rem;
-	font-size: 25px;
-	font-weight: 700;
+.social-icons .instagram:hover {
+  background: linear-gradient(45deg, #f58529, #d6249f, #8134af);
+  -webkit-background-clip: text;
+  color: transparent;
+  transform: scale(1.2);
+  cursor: pointer;
 }
-.position-relative {
-	position: relative;
+.social-icons .linkedin:hover {
+  color: #0077b5;
+  transform: scale(1.2);
+  cursor: pointer;
 }
-.position-absolute {
-	position: absolute;
-}
-.d-flex {
-	display: flex;
-	position: relative;
-	z-index: 2;
-}
-.flex-direction-column {
-	flex-direction: column;
-}
-.mx-auto {
-	margin-right: auto;
-	margin-left: auto;
-}
-.p-3 {
-	padding: 1rem;
-}
-.px-3 {
-	padding-right: 1rem;
-	padding-left: 1rem;
-}
-.px-5 {
-	padding-right: 2rem;
-	padding-left: 2rem;
-}
-.fullscreen {
-	width: 100vw;
-	height: 90vh;
-	overflow: hidden;
-}
-.item-align-center {
-	align-items: center;
-}
-</style>
+.card-body img {
+  width: 127px;
+  height: 160px;
+  object-fit: cover;
+}</style>
 </head>
-<body>
-	<div class="bg">
-		<span>TypeScript</span>
-		<span>JavaScript</span>
-		<span>JS</span>
-		<span>Ajax</span>
-		<span>ES6</span>
-		<span>ECMAScript 6</span>
-		<span>Node.js</span>
-		<span>npm</span>
-		<span>Yarn</span>
-		<span>React.js</span>
-		<span>ReactNative.js</span>
-		<span>Next.js</span>
-		<span>PHP</span>
-		<span>Laravel</span>
-		<span>Composer</span>
-		<span>HTML</span>
-		<span>CSS</span>
-		<span>SCSS</span>
-		<span>SASS</span>
-		<span>Java</span>
-		<span>Android</span>
-		<span>iOS</span>
-		<span>Photoshop</span>
-		<span>Adobe XD</span>
-		<span>Figma</span>
-		<span>SEO</span>
-		<span>Git</span>
-		<span>SQL</span>
-		<span>MySQL</span>
-		<span>MangoDB</span>
-		<span>SQLite</span>
-		<span>XML</span>
-		<span>JSON</span>
-	</div>
+<body className='snippet-body'>
+<div class="container d-flex justify-content-center">
+  <div class="card card-glass rounded-5 shadow-lg p-4">
+    <div class="card-body text-center">
+      <img src="https://avatars.githubusercontent.com/u/39407267" alt="Profile Photo" class="rounded-circle mb-3">
+      <h4 class="card-title mb-2">Ahmad Kooti</h4>
+      <p class="card-text mb-2">طراح و توسعه دهنده وب | Web Developer</p>
+      <div class="social-icons d-flex justify-content-center gap-4 mt-4">
+        <a href="https://t.me/salar_web" target="_blank" class="twitter">
+          <i class="fa fa-paper-plane"></i>
+        </a>
+        <a href="https://instagram.com/" target="_blank" class="instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
 
-	<div class="d-flex fullscreen item-align-center">
-		<section class="card flex-direction-column position-relative mx-auto">
-			<header class="card-header">
-				<h1 class="card-title">احمد کوتی</h1>
-			</header>
-			<div class="card-body">
-				<h3>طراح و توسعه دهنده وب سایت<br>وقت خالی داشته باشم هم به سایت خودم میرسم و هم کار شما رو انجام میدم.</h3>
-				<h3>تماس با من</h3>
-				<a class="position-absolute p-3" href="https://instagram.com/ahmad.ayzam"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36" width="36px" height="36px"><path d="m25.1 0c6 0 10.9 4.9 10.9 10.9v14.2c0 6-4.9 10.9-10.9 10.9h-14.2c-6 0-10.9-4.9-10.9-10.9v-14.2c0-6 4.9-10.9 10.9-10.9zm-22.3 10.9v14.2c0 4.5 3.6 8.1 8.1 8.1h14.2c4.5 0 8-3.6 8-8.1v-14.2c0-4.5-3.5-8.1-8-8.1h-14.2c-4.5 0-8.1 3.6-8.1 8.1zm26.6-2.4c0 1.1-0.9 1.9-1.9 1.9-1.1 0-1.9-0.8-1.9-1.9 0-1 0.8-1.9 1.9-1.9 1 0 1.9 0.9 1.9 1.9zm-1.9 9.5c0 5.2-4.3 9.5-9.5 9.5-5.2 0-9.5-4.3-9.5-9.5 0-5.2 4.3-9.5 9.5-9.5 5.2 0 9.5 4.3 9.5 9.5zm-16.1 0c0 3.7 2.9 6.6 6.6 6.6 3.7 0 6.6-2.9 6.6-6.6 0-3.7-2.9-6.6-6.6-6.6-3.7 0-6.6 2.9-6.6 6.6z"/></svg></a>
-				<a class="position-absolute p-3" href="https://t.me/ahmadayzam"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36" width="36" height="36"><path d="m3.1 16.9l20.8-8.7c2.1-0.9 9.1-3.7 9.1-3.7 0 0 3.2-1.3 2.9 1.8-0.1 1.2-0.8 5.6-1.5 10.4l-2.2 14.2c0 0-0.2 2.1-1.7 2.4-1.6 0.4-4.1-1.2-4.5-1.6-0.4-0.3-6.7-4.3-9.1-6.3-0.6-0.6-1.3-1.6 0.1-2.9 3.3-3 7.1-6.7 9.4-9 1.1-1.1 2.2-3.6-2.3-0.6l-12.6 8.6c0 0-1.4 0.9-4.1 0.1-2.7-0.8-5.9-1.9-5.9-1.9 0 0-2.1-1.4 1.6-2.8z"/></svg></a>
-				<a class="position-absolute p-3" href="https://wa.me/989104509871"><svg xmlns="http://www.w3.org/2000/svg" width="36px" height="36px"
-		viewBox="0 0 36 36"><g><path d="m27.4 21.2c0.2 0.4 0.1 1.5-0.2 2.4-0.4 1.3-2.4 2.3-3.2 2.3h-0.2q-0.3 0.1-0.7 0.1 0 0 0 0c-0.7 0-1.9-0.1-4.4-1.1-2.7-1.1-5.3-3.4-7.4-6.4q0-0.1 0-0.1c-0.6-0.7-1.8-2.6-1.8-4.6 0-2.3 1-3.5 1.6-3.9 0.6-0.4 2-0.6 2.2-0.6 0.2 0 0.2 0 0.2 0 0.6 0 0.9 0.3 1.2 1 0.1 0.3 1.2 3 1.3 3.1 0.1 0.1 0.3 0.6 0 1.1v0.2c-0.1 0.2-0.2 0.4-0.4 0.6q-0.2 0.2-0.3 0.3-0.2 0.3-0.4 0.5c-0.1 0-0.2 0.1-0.2 0.2q0 0 0.1 0.1c0.3 0.5 2.4 3.4 5.2 4.6 0.1 0.1 0.6 0.3 0.6 0.3q0-0.1 0.1-0.1c0.2-0.3 1-1.2 1.3-1.6q0.3-0.5 0.9-0.5c0.2 0 0.4 0 0.6 0.1 0.4 0.2 3.1 1.5 3.1 1.5 0.4 0.2 0.7 0.3 0.8 0.5z"/><path fill-rule="evenodd" d="m36 17.5c0 9.7-7.9 17.6-17.7 17.6-2.9 0-5.8-0.7-8.3-2.1l-9.4 3q-0.1 0-0.1 0-0.2 0-0.4-0.1c-0.1-0.2-0.1-0.4-0.1-0.5l3.1-9c-1.6-2.7-2.5-5.7-2.5-8.9 0-9.6 8-17.5 17.7-17.5 9.8 0 17.7 7.9 17.7 17.5zm-3.7 0c0-7.6-6.3-13.8-14-13.8-7.7 0-14 6.2-14 13.8 0 3 0.9 5.8 2.7 8.2q0.1 0.2 0 0.4l-1.5 4.5 4.7-1.5q0.1 0 0.2 0 0.1 0 0.2 0c2.3 1.5 5 2.3 7.7 2.3 7.7 0 14-6.2 14-13.9z"/>
-		</g></svg></a>
-				<a class="position-absolute px-3" href="tel:+989123456789">09123456789</a>
-			</div>
-		</section>
-	</div>
-
-	<script>
-		const spans = () => document.querySelectorAll('span');
-
-		spans().forEach((span) => {
-			for (let i = 0; i < 10; i++) {
-				document.querySelector('.bg').append(span.cloneNode(true));
-			}
-		});
-
-		spans().forEach((span) => {
-			span.style.opacity = Math.random();
-			span.style.transform = `translate(${-90 + ~~(Math.random() * 180)}vw, ${90 - ~~(Math.random() * 180)}vh)`;
-		});
-	</script>
 </body>
 </html>
