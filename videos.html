@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>آموزش‌های قالب پارس کالا</title>
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet">
+    <style>
+/* ==================== 
+   ریست و تنظیمات پایه
+   ==================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #4f46e5;
+    --primary-dark: #999;
+    --primary-light: #eef2ff;
+    --accent: #f59e0b;
+    --text-dark: #555;
+    --text-medium: #475569;
+    --text-light: #94a3b8;
+    --bg-body: #f8fafc;
+    --bg-card: #ffffff;
+    --border: #e2e8f0;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
+    --shadow-md: 0 4px 15px rgba(0,0,0,0.08);
+    --shadow-lg: 0 15px 40px rgba(0,0,0,0.12);
+    --radius-sm: 8px;
+    --radius-md: 16px;
+    --radius-lg: 24px;
+    --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body {
+    font-family: 'Vazirmatn', sans-serif;
+    background: var(--bg-body);
+    color: var(--text-dark);
+    line-height: 1.7;
+    min-height: 100vh;
+    background-image: 
+        radial-gradient(circle at 10% 20%, rgba(79, 70, 229, 0.03) 0%, transparent 50%),
+        radial-gradient(circle at 90% 80%, rgba(245, 158, 11, 0.04) 0%, transparent 50%);
+}
+
+.page-header {
+    text-align: center;
+    padding: 40px 0 20px;
+    position: relative;
+}
+
+.page-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    border-radius: 2px;
+}
+
+.page-header h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #434343;
+    margin-bottom: 12px;
+    line-height: 1.4;
+}
+
+.page-header h1 span {
+    color: var(--primary);
+    position: relative;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 30px;
+	margin-bottom: 20px;
+}
+
+.video-tutorials {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 28px;
+    direction: rtl;
+}
+
+.tutorial-item {
+    background: var(--bg-card);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border);
+    transition: all var(--transition);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.tutorial-item:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-6px);
+    border-color: transparent;
+}
+
+.video-wrapper video {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.tutorial-content {
+    padding: 20px 18px 22px;
+    flex: 1;
+}
+
+.tutorial-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    line-height: 1.6;
+    margin: 0;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .page-header {
+        padding: 40px 16px 35px;
+    }
+
+    .page-header h1 {
+        font-size: 1.5rem;
+    }
+
+    .container {
+        padding: 24px 12px 50px;
+    }
+
+    .video-tutorials {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .tutorial-content {
+        padding: 16px 14px 18px;
+    }
+
+    .tutorial-title {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .video-wrapper::after {
+        width: 50px;
+        height: 50px;
+        font-size: 2rem;
+        padding-right: 4px;
+        box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.1);
+    }
+}
+
+    </style>
+</head>
+<body>
+
+    <header class="page-header">
+        <h1>آموزش‌های <span>قالب پارس کالا</span></h1>
+    </header>
+
+    <main class="container">
+        <div class="video-tutorials">
+
+            <!-- آموزش ۱ -->
+            <div class="tutorial-item">
+                <div class="video-wrapper" data-video>
+                    <video controls preload="metadata">
+                        <source src="https://files-de.rtl-theme.com/attachments/2023/07/12492ee1094bf3bc1e342796736f388412b02508d83740.mp4" type="video/mp4">
+                        مرورگر شما از پخش ویدیو پشتیبانی نمی‌کند.
+                    </video>
+                </div>
+                <div class="tutorial-content">
+                    <h3 class="tutorial-title">آموزش راه‌اندازی بسته نصبی دموی قالب پارس کالا</h3>
+                </div>
+            </div>
+
+            <!-- آموزش ۲ -->
+            <div class="tutorial-item">
+                <div class="video-wrapper" data-video>
+                    <video controls preload="metadata">
+                        <source src="https://files-de.rtl-theme.com/attachments/2023/07/2be53448a787138106f373788a321828c640a498143caa.mp4" type="video/mp4">
+                        مرورگر شما از پخش ویدیو پشتیبانی نمی‌کند.
+                    </video>
+                </div>
+                <div class="tutorial-content">
+                    <h3 class="tutorial-title">آموزش فعال‌سازی سیستم ورود/عضویت پیامکی قالب پارس کالا</h3>
+                </div>
+            </div>
+
+            <!-- آموزش ۳ -->
+            <div class="tutorial-item">
+                <div class="video-wrapper" data-video>
+                    <video controls preload="metadata">
+                        <source src="https://files-de.rtl-theme.com/attachments/2023/07/a192a37415891717f6d9f06df3646a736297598576aa96.mp4" type="video/mp4">
+                        مرورگر شما از پخش ویدیو پشتیبانی نمی‌کند.
+                    </video>
+                </div>
+                <div class="tutorial-content">
+                    <h3 class="tutorial-title">آموزش تنظیم و پیکربندی هدر/فوتر قالب پارس کالا</h3>
+                </div>
+            </div>
+
+            <!-- آموزش ۴ -->
+            <div class="tutorial-item">
+                <div class="video-wrapper" data-video>
+                    <video controls preload="metadata">
+                        <source src="https://files-de.rtl-theme.com/attachments/2023/08/a48c0e019372b6d382f74009857e87e75396e1b3687323.mp4" type="video/mp4">
+                        مرورگر شما از پخش ویدیو پشتیبانی نمی‌کند.
+                    </video>
+                </div>
+                <div class="tutorial-content">
+                    <h3 class="tutorial-title">آموزش تنظیم و پیکربندی استوری قالب پارس کالا</h3>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+</body>
+</html>
