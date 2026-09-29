@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="fa-IR">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>مجتمع پدر 3</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:Tahoma;background:#e8eef2;font-weight:400;line-height:1.7}.property-card{max-width:890px;width:100%;background:#fff;box-shadow:0 0 20px #607d8b61;overflow:hidden;transition:all .2s ease;border:0;margin:auto}.card-header{color:#fff;background:#405e6c;padding:8px 25px}.header-titles{font-size:20px;gap:8px;display:flex;align-items:center;justify-content:center;font-weight:600}.header-titles span{font-size:1.8rem}.units-grid{padding:15px 10px 20px;background:#fff}.grid-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px;color:#435363;font-weight:600;font-size:.9rem;border-bottom:1px dashed #dce3eb;padding-bottom:10px}.unit-list{display:flex;flex-direction:column;gap:14px}.floor-group{display:flex;flex-direction:column;gap:8px}.floor-title{font-size:.9rem;font-weight:700;color:#516c78;background:#e1e8ecd9;padding:6px 12px;border-radius:8px;width:fit-content}.floor-units{display:flex;flex-wrap:wrap;gap:15px}.unit-item{border:1px solid #ccdae0;border-radius:10px;padding:10px 15px;display:flex;flex-direction:column;gap:6px;flex:1 0 auto;box-shadow:0 3px 20px 0 #607d8b21;transition:.15s ease;background:#e5eef2}.unit-item:hover{box-shadow:0 0 20px 0 #607d8b59}.postal{text-align:center;font-size:16px;font-weight:600;color:#607D8B}.postal-code{font-size:1rem;font-weight:600;color:#555;display:flex;gap:4px;align-items:center;justify-content:space-between}.postal-code span{font-size:.9rem;color:#6b6b6b}.unit{border-top:1px dotted #cedce2;padding-top:8px;margin-top:2px}@media (max-width: 500px){.postal-code{flex-wrap:wrap}.header-titles{font-size:16px;flex-direction:column;gap:0}.card-header{text-align:center}.floor-units{flex-direction:column}.floor-title{width:auto;text-align:center}}
+</style>
+</head>
+<body>
+  <div class="property-card">
+
+    <div class="card-header">
+      <div class="header-titles">
+          <span>🏠</span> مجتمع پدر3
+      </div>
+    </div>
+
+    <div class="units-grid">
+      <div class="unit-list">
+
+		<!-- Floor 1 -->
+        <div class="floor-group">
+          <div class="floor-units">
+            <div class="unit-item">
+              <div class="postal">🚪 واحد 1</div>
+              <div class="postal-code unit">
+                <span>کد پستی :</span> 6136783487
+              </div>
+              <div class="postal-code unit">
+                <span>شناسه قبض برق :</span> 18010250034132
+              </div>
+              <div class="postal-code unit">
+                <span>شماره اشتراک گاز :</span> 1051225287
+              </div>
+            </div>
+            <div class="unit-item">
+              <div class="postal">🚪 واحد 2</div>
+              <div class="postal-code unit">
+                <span>کد پستی :</span> 6136783490
+              </div>
+              <div class="postal-code unit">
+                <span>شناسه قبض برق :</span> 1304473306126
+              </div>
+              <div class="postal-code unit">
+                <span>شماره اشتراک گاز :</span> 1125992203
+              </div>
+            </div>
+            <div class="unit-item">
+              <div class="postal">🚪 واحد 3</div>
+              <div class="postal-code unit">
+                <span>کد پستی :</span> 6136783504
+              </div>
+              <div class="postal-code unit">
+                <span>شناسه قبض برق :</span> 1304473406120
+              </div>
+              <div class="postal-code unit">
+                <span>شماره اشتراک گاز :</span> 1125993369
+              </div>
+            </div>
+          </div>
+
+          <div class="floor-units">
+            <div class="unit-item">
+              <div class="postal">🚪 واحد 4</div>
+              <div class="postal-code unit">
+                <span>کد پستی :</span> 6136783492
+              </div>
+              <div class="postal-code unit">
+                <span>شناسه قبض برق :</span> 18010250034135
+              </div>
+              <div class="postal-code unit">
+                <span>شماره اشتراک گاز :</span> 1125994414
+              </div>
+            </div>
+            <div class="unit-item">
+              <div class="postal">🚪 واحد 5</div>
+              <div class="postal-code unit">
+                <span>کد پستی :</span> 6136783496
+              </div>
+              <div class="postal-code unit">
+                <span>شناسه قبض برق :</span> 18010250034136
+              </div>
+              <div class="postal-code unit">
+                <span>شماره اشتراک گاز :</span> 1125995570
+              </div>
+            </div>
+            <div class="unit-item">
+              <div class="postal">🚪 واحد 6</div>
+              <div class="postal-code unit">
+                <span>کد پستی :</span> 6136783505
+              </div>
+              <div class="postal-code unit">
+                <span>شناسه قبض برق :</span> 18010250034137
+              </div>
+              <div class="postal-code unit">
+                <span>شماره اشتراک گاز :</span> 1125985780
+              </div>
+            </div>
+          </div>
+
+          <div class="floor-units">
+            <div class="unit-item">
+              <div class="postal">🚪 واحد 7</div>
+              <div class="postal-code unit">
+                <span>کد پستی :</span> 6136783500
+              </div>
+              <div class="postal-code unit">
+                <span>شناسه قبض برق :</span> 1304473806129
+              </div>
+              <div class="postal-code unit">
+                <span>شماره اشتراک گاز :</span> 1125986128
+              </div>
+            </div>
+            <div class="unit-item">
+              <div class="postal">🚪 واحد 8</div>
+              <div class="postal-code unit">
+                <span>کد پستی :</span> 6136783501
+              </div>
+              <div class="postal-code unit">
+                <span>شناسه قبض برق :</span> 18010250034139
+              </div>
+              <div class="postal-code unit">
+                <span>شماره اشتراک گاز :</span> 1125987420
+              </div>
+            </div>
+            <div class="unit-item">
+              <div class="postal">🚪 واحد 9</div>
+              <div class="postal-code unit">
+                <span>کد پستی :</span> 6136783506
+              </div>
+              <div class="postal-code unit">
+                <span>شناسه قبض برق :</span> 18010250034140
+              </div>
+              <div class="postal-code unit">
+                <span>شماره اشتراک گاز :</span> 1125988585
+              </div>
+            </div>
+          </div>
+
+          <div class="floor-units">
+            <div class="unit-item">
+              <div class="postal">🚪 واحد 10</div>
+              <div class="postal-code unit">
+                <span>کد پستی :</span> 6136783502
+              </div>
+              <div class="postal-code unit">
+                <span>شناسه قبض برق :</span> 1304474106120
+              </div>
+              <div class="postal-code unit">
+                <span>شماره اشتراک گاز :</span> 1125990888
+              </div>
+            </div>
+            <div class="unit-item">
+              <div class="postal">🚪 واحد 11</div>
+              <div class="postal-code unit">
+                <span>کد پستی :</span> 6136783503
+              </div>
+              <div class="postal-code unit">
+                <span>شناسه قبض برق :</span> 1304474206125
+              </div>
+              <div class="postal-code unit">
+                <span>شماره اشتراک گاز :</span> 1125991933
+              </div>
+            </div>
+            <div class="unit-item">
+              <div class="postal">🚪 واحد 12</div>
+              <div class="postal-code unit">
+                <span>کد پستی :</span> 6136783507
+              </div>
+              <div class="postal-code unit">
+                <span>شناسه قبض برق :</span> 1304474306120
+              </div>
+              <div class="postal-code unit">
+                <span>شماره اشتراک گاز :</span> 1125993112
+              </div>
+            </div>
+          </div>
+
+          <div class="floor-units">
+            <div class="unit-item">
+              <div class="postal">🚪 واحد 13</div>
+              <div class="postal-code unit">
+                <span>کد پستی :</span> 6136783508
+              </div>
+              <div class="postal-code unit">
+                <span>شناسه قبض برق :</span> 1304474406124
+              </div>
+              <div class="postal-code unit">
+                <span>شماره اشتراک گاز :</span> 1125995323
+              </div>
+            </div>
+            <div class="unit-item">
+              <div class="postal">🚪 واحد 14</div>
+              <div class="postal-code unit">
+                <span>کد پستی :</span> 6136783509
+              </div>
+              <div class="postal-code unit">
+                <span>شناسه قبض برق :</span> 18010250034145
+              </div>
+              <div class="postal-code unit">
+                <span>شماره اشتراک گاز :</span> 1125985072
+              </div>
+            </div>
+            <div class="unit-item">
+              <div class="postal">🚪 واحد 15</div>
+              <div class="postal-code unit">
+                <span>کد پستی :</span> 6136783510
+              </div>
+              <div class="postal-code unit">
+                <span>شناسه قبض برق :</span> 18010250034146
+              </div>
+              <div class="postal-code unit">
+                <span>شماره اشتراک گاز :</span> 1126004296
+              </div>
+            </div>
+          </div>
+
+          <div class="floor-units">
+            <div class="unit-item">
+              <div class="postal">🚪 واحد 16</div>
+              <div class="postal-code unit">
+                <span>کد پستی :</span> 6136783512
+              </div>
+              <div class="postal-code unit">
+                <span>شناسه قبض برق :</span> 18010250034147
+              </div>
+              <div class="postal-code unit">
+                <span>شماره اشتراک گاز :</span> 1125988260
+              </div>
+            </div>
+            <div class="unit-item">
+              <div class="postal">🚪 واحد 17</div>
+              <div class="postal-code unit">
+                <span>کد پستی :</span> 6136783513
+              </div>
+              <div class="postal-code unit">
+                <span>شناسه قبض برق :</span> 1304474806122
+              </div>
+              <div class="postal-code unit">
+                <span>شماره اشتراک گاز :</span> 1125989316
+              </div>
+            </div>
+            <div class="unit-item">
+              <div class="postal">🚪 واحد 18</div>
+              <div class="postal-code unit">
+                <span>کد پستی :</span> 6136783514
+              </div>
+              <div class="postal-code unit">
+                <span>شناسه قبض برق :</span> 180102500341749
+              </div>
+              <div class="postal-code unit">
+                <span>شماره اشتراک گاز :</span> 1125995401
+              </div>
+            </div>
+          </div>
+
+          <div class="floor-units">
+            <div class="unit-item">
+              <div class="postal">🚪 واحد 19</div>
+              <div class="postal-code unit">
+                <span>کد پستی :</span> 6136783515
+              </div>
+              <div class="postal-code unit">
+                <span>شناسه قبض برق :</span> 1271760106124
+              </div>
+              <div class="postal-code unit">
+                <span>شماره اشتراک گاز :</span> 1125990563
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+
+</div>
+</div>
+
+</body>
+</html>
