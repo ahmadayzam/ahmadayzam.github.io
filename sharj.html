@@ -6,7 +6,137 @@
 <title>گزارش شارژ ساختمان</title>
 <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&display=swap" rel="stylesheet">
 <style>
-:root{--blue:#174a8b;--blue2:#dce8f7;--green:#16852a;--red:#df1717;--line:#9eb5d2;--text:#111;--paper:#fff}*{box-sizing:border-box}body{margin:0;background:#eef2f7;font-family:Vazirmatn,Tahoma,Arial;color:#555}.page{width:min(1200px, 100%);margin:0 auto;background:#fff;padding:18px}.title{text-align:center;font-size:25px;font-weight:900;color:#48616d;margin:0 0 14px;padding-bottom:10px;border-bottom:3px dotted #607d8b4f}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.card{border:1.5px solid #607d8b45;border-radius:10px;overflow:hidden;background:#fff;break-inside:avoid;min-height:250px;display:flex;flex-direction:column}.date{background:linear-gradient(#f7fbff,#e7f0fb);color:#40608f;text-align:center;font-size:18px;font-weight:600;padding:8px 5px;border-bottom:1px solid #bed6e1}.income{text-align:center;color:#4a9c7e;font-size:16px;font-weight:600;padding:8px 4px;border-bottom:1px solid #bed6e18f}table{width:100%;border-collapse:collapse;font-size:14px}th,td{border-bottom:1px dotted #c8c8c8;padding:8px 5px;vertical-align:middle}th{background:#f4f7fb;color:#327392;font-weight:600}th:first-child,td:first-child{width:42px;text-align:center}th:last-child,td:last-child{width:105px;text-align:center;white-space:nowrap}.expense-total{margin-top:auto;text-align:center;color:#e34c41;font-weight:600;font-size:14px;padding:12px 0;border-top:1px dotted #869fbf;background:#fff}.bottom{margin-top:15px}.box-title{background:linear-gradient(#f7fbff,#e7f0fb);color:#444;font-weight:900;font-size:20px;text-align:center;padding:8px;border-bottom:1px solid #bed6e1}.sum-row{display:flex;justify-content:space-between;align-items:center;padding:10px 14px;border-bottom:1px solid #dedede;font-size:16px;font-weight:600}.green{color:#128226}.red{color:#da3a2e}.summary,.notes{border:1.5px solid #607d8b45;border-radius:10px;overflow:hidden}.printbar{display:flex;justify-content:center;gap:8px;margin:14px 0}button{border:0;border-radius:6px;background:var(--blue);color:#fff;padding:9px 18px;font-size:14px;cursor:pointer}@media(max-width:900px){.grid{grid-template-columns:1fr 1fr}.bottom{grid-template-columns:1fr}}@media(max-width:600px){.page{padding:8px}.grid{grid-template-columns:1fr}.card{min-height:0}.title{font-size:22px}}
+:root {
+  --blue:#174a8b; --blue2:#dce8f7; --green:#16852a; --red:#df1717;
+  --line:#9eb5d2; --text:#111; --paper:#fff;
+}
+* {
+  box-sizing:border-box
+}
+body {
+  margin: 0;
+  background: #eef2f7;
+  font-family: Vazirmatn, Tahoma, Arial;
+  color: #555;
+}
+.page {
+    width: min(1200px, 100%);
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 18px;
+}
+.title {
+    text-align: center;
+    font-size: 25px;
+    font-weight: 900;
+    color: #48616d;
+    margin: 0 0 14px;
+    padding-bottom: 10px;
+    border-bottom: 3px dotted #607d8b4f;
+}
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+.card {
+    border: 1.5px solid #607d8b45;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #fff;
+    break-inside: avoid;
+    min-height: 250px;
+    display: flex;
+    flex-direction: column;
+}
+.date {
+    background: linear-gradient(#f7fbff, #e7f0fb);
+    color: #40608f;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 8px 5px;
+    border-bottom: 1px solid #bed6e1;
+}
+.income {
+    text-align: center;
+    color: #4a9c7e;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 8px 4px;
+    border-bottom: 1px solid #bed6e18f;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+th, td {
+    border-bottom: 1px dotted #c8c8c8;
+    padding: 8px 5px;
+    vertical-align: middle;
+}
+th {
+    background: #f4f7fb;
+    color: #327392;
+    font-weight: 600;
+}
+th:first-child, td:first-child {
+    width: 42px;
+    text-align: center;
+}
+th:last-child, td:last-child {
+    width: 105px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.expense-total {
+    margin-top: auto;
+    text-align: center;
+    color: #e34c41;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 12px 0;
+    border-top: 1px dotted #869fbf;
+    background: #fff;
+}
+.bottom {
+    margin-top:15px;
+}
+.box-title {
+    background: linear-gradient(#f7fbff, #e7f0fb);
+    color: #444;
+    font-weight: 900;
+    font-size: 20px;
+    text-align: center;
+    padding: 8px;
+    border-bottom: 1px solid #bed6e1;
+}
+.sum-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 14px;
+    border-bottom: 1px solid #dedede;
+    font-size: 16px;
+    font-weight: 600;
+}
+.green {
+    color: #128226;
+}
+.red {
+    color: #da3a2e;
+}
+.summary, .notes {
+    border: 1.5px solid #607d8b45;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.printbar{display:flex;justify-content:center;gap:8px;margin:14px 0}
+  button{border:0;border-radius:6px;background:var(--blue);color:#fff;padding:9px 18px;font-size:14px;cursor:pointer}
+  @media(max-width:900px){.grid{grid-template-columns:1fr 1fr}.bottom{grid-template-columns:1fr}}
+  @media(max-width:600px){.page{padding:8px}.grid{grid-template-columns:1fr}.card{min-height:0}.title{font-size:22px}}
 </style>
 </head>
 <body>
@@ -17,9 +147,9 @@
   <section class="bottom">
     <div class="summary">
       <div class="box-title">جمع صورتحساب تا پایان مرداد</div>
-      <div class="sum-row"><span>مجموع دریافتی شارژ:</span><span class="green">84,500,000 تومان</span></div>
-      <div class="sum-row"><span>مجموع کل هزینه‌ها:</span><span class="red">88,225,800 تومان</span></div>
-      <div class="sum-row"><span>مانده نهایی (کسری):</span><span class="red">3,725,800- تومان</span></div>
+      <div class="sum-row"><span>مجموع دریافتی ها:</span><span class="green">+ 99,900,000 تومان</span></div>
+      <div class="sum-row"><span>مجموع هزینه ها:</span><span class="red">- 105,531,800 تومان</span></div>
+      <div class="sum-row"><span>مانده (کسری):</span><span class="red">- 5,631,800 تومان</span></div>
     </div>
   </section>
 </div>
@@ -43,7 +173,9 @@ const months = [
 ["1405/02/01","5,250,000",[["سرویس آسانسور","500,000"],["شستشو","1,000,000"],["قبض آب","629,400"],["دیجیتال پمپ پشت‌بام","3,500,000"],["قبض برق","2,771,400"]],"8,400,800"],
 ["1405/03/01","5,750,000",[["سرویس آسانسور","500,000"],["شستشو","1,000,000"],["تعمیر آسانسور","500,000"]],"2,000,000"],
 ["1405/04/01","5,750,000",[["سرویس آسانسور","1,000,000"],["شستشو","1,500,000"],["گرفتگی فاضلاب","7,000,000"]],"9,500,000"],
-["1405/05/01","5,750,000",[["سرویس آسانسور","1,000,000"],["شستشو","1,000,000"],["قبض آب","3,500,000"]],"5,500,000"]
+["1405/05/01","5,750,000",[["سرویس آسانسور","1,000,000"],["شستشو","1,000,000"],["قبض آب","3,500,000"]],"5,500,000"],
+["1405/06/01","7,350,000",[["سرویس آسانسور","1,000,000"],["شستشو","1,000,000"],["قبض برق","8,416,000"],["4 عدد لامپ 9 وات برای راه‌پله و پشت‌بام","600,000"],["تعمیر درب آسانسور","1,500,000"]],"12,516,000"],
+["1405/07/01","8,050,000",[["سرویس آسانسور","1,000,000"],["شستشو","1,000,000"],["قبض برق","2,790,000"]],"4,790,000"]
 ];
 
 const el = document.getElementById("months");
