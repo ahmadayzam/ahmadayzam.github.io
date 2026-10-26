@@ -5,194 +5,327 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>گزارش شارژ ساختمان</title>
 <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&display=swap" rel="stylesheet">
+<script>
+(function () {
+  var saved = null;
+  try { saved = localStorage.getItem("theme"); } catch (e) {}
+  var prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+  document.documentElement.setAttribute("data-theme", saved || (prefersDark ? "dark" : "light"));
+})();
+</script>
 <style>
-:root {
-  --blue:#174a8b; --blue2:#dce8f7; --green:#16852a; --red:#df1717;
-  --line:#9eb5d2; --text:#111; --paper:#fff;
-}
-* {
-  box-sizing:border-box
-}
+* { box-sizing: border-box; }
+
 body {
   margin: 0;
   background: #eef2f7;
-  font-family: Vazirmatn, Tahoma, Arial;
+  font-family: Vazirmatn, Tahoma, Arial, sans-serif;
   color: #555;
 }
+
 .page {
-    width: min(1200px, 100%);
-    margin: 0 auto;
-    background: #ffffff;
-    padding: 18px;
+  width: min(1200px, 100%);
+  margin: 0 auto;
+  background: #fff;
+  padding: 18px;
 }
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 15px;
+  margin-bottom: 20px;
+  border-bottom: 3px dotted #607d8b4f;
+}
+
 .title {
-    text-align: center;
-    font-size: 25px;
-    font-weight: 900;
-    color: #48616d;
-    margin: 0 0 14px;
-    padding-bottom: 10px;
-    border-bottom: 3px dotted #607d8b4f;
+  margin: 0;
+  font-size: 25px;
+  font-weight: 900;
+  color: #48616d;
 }
+
+.theme-btn {
+  border: 1px solid #607d8b45;
+  background: none;
+  border-radius: 8px;
+  padding: 4px 10px;
+  font-size: 20px;
+  line-height: 1.4;
+  cursor: pointer;
+}
+
 .grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
 }
+
 .card {
-    border: 1.5px solid #607d8b45;
-    border-radius: 10px;
-    overflow: hidden;
-    background: #fff;
-    break-inside: avoid;
-    min-height: 250px;
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
+  min-height: 250px;
+  border: 1.5px solid #607d8b45;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #fff;
+  break-inside: avoid;
 }
+
 .date {
-    background: linear-gradient(#f7fbff, #e7f0fb);
-    color: #40608f;
-    text-align: center;
-    font-size: 18px;
-    font-weight: 600;
-    padding: 8px 5px;
-    border-bottom: 1px solid #bed6e1;
+  background: linear-gradient(#f7fbff, #e7f0fb);
+  color: #40608f;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 8px 5px;
+  border-bottom: 1px solid #bed6e1;
 }
+
 .income {
-    text-align: center;
-    color: #4a9c7e;
-    font-size: 16px;
-    font-weight: 600;
-    padding: 8px 4px;
-    border-bottom: 1px solid #bed6e18f;
+  text-align: center;
+  color: #4a9c7e;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 8px 4px;
+  border-bottom: 1px solid #bed6e18f;
 }
+
 table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 14px;
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
 }
+
 th, td {
-    border-bottom: 1px dotted #c8c8c8;
-    padding: 8px 5px;
-    vertical-align: middle;
+  border-bottom: 1px dotted #c8c8c8;
+  padding: 8px 5px;
+  vertical-align: middle;
 }
+
 th {
-    background: #f4f7fb;
-    color: #327392;
-    font-weight: 600;
+  background: #f4f7fb;
+  color: #327392;
+  font-weight: 600;
 }
+
 th:first-child, td:first-child {
-    width: 42px;
-    text-align: center;
+  width: 42px;
+  text-align: center;
 }
+
 th:last-child, td:last-child {
-    width: 105px;
-    text-align: center;
-    white-space: nowrap;
+  width: 105px;
+  text-align: center;
+  white-space: nowrap;
 }
 
 .expense-total {
-    margin-top: auto;
-    text-align: center;
-    color: #e34c41;
-    font-weight: 600;
-    font-size: 14px;
-    padding: 12px 0;
-    border-top: 1px dotted #869fbf;
-    background: #fff;
+  margin-top: auto;
+  text-align: center;
+  color: #e34c41;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 12px 0;
+  border-top: 1px dotted #869fbf;
+  background: #fff;
 }
-.bottom {
-    margin-top:15px;
+
+.bottom { margin-top: 15px; }
+
+.summary {
+  border: 1.5px solid #607d8b45;
+  border-radius: 10px;
+  overflow: hidden;
 }
+
 .box-title {
-    background: linear-gradient(#f7fbff, #e7f0fb);
-    color: #444;
-    font-weight: 900;
-    font-size: 20px;
-    text-align: center;
-    padding: 8px;
-    border-bottom: 1px solid #bed6e1;
+  background: linear-gradient(#f7fbff, #e7f0fb);
+  color: #444;
+  font-weight: 900;
+  font-size: 20px;
+  text-align: center;
+  padding: 8px;
+  border-bottom: 1px solid #bed6e1;
 }
+
 .sum-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 14px;
-    border-bottom: 1px solid #dedede;
-    font-size: 16px;
-    font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 14px;
+  border-bottom: 1px solid #dedede;
+  font-size: 16px;
+  font-weight: 600;
 }
-.green {
-    color: #128226;
+
+.sum-row:last-child { border-bottom: 0; }
+
+.green { color: #128226; }
+.red   { color: #da3a2e; }
+
+@media (max-width: 900px) {
+  .grid { grid-template-columns: 1fr 1fr; }
 }
-.red {
-    color: #da3a2e;
+
+@media (max-width: 600px) {
+  .page { padding: 8px; }
+  .grid { grid-template-columns: 1fr; }
+  .card { min-height: 0; }
+  .title { font-size: 20px; }
+  .box-title { font-size: 18px; }
 }
-.summary, .notes {
-    border: 1.5px solid #607d8b45;
-    border-radius: 10px;
-    overflow: hidden;
+
+@media print {
+  .theme-btn { display: none; }
 }
-.printbar{display:flex;justify-content:center;gap:8px;margin:14px 0}
-  button{border:0;border-radius:6px;background:var(--blue);color:#fff;padding:9px 18px;font-size:14px;cursor:pointer}
-  @media(max-width:900px){.grid{grid-template-columns:1fr 1fr}.bottom{grid-template-columns:1fr}}
-  @media(max-width:600px){.page{padding:8px}.grid{grid-template-columns:1fr}.card{min-height:0}.title{font-size:22px}}
+
+/* ===== Dark mode ===== */
+html[data-theme="dark"] body { background: #28363d; color: #ccc; }
+html[data-theme="dark"] .page { background: #28363d; }
+html[data-theme="dark"] .header { border-bottom-color: #4a5c66; }
+html[data-theme="dark"] .title { color: #ccc; }
+html[data-theme="dark"] .theme-btn { border-color: #4a5c66; }
+html[data-theme="dark"] .card { border-color: #384a5f; background: #222e3c; }
+html[data-theme="dark"] .date { background: #202f36; color: #7997a6; border-bottom-color: #2c3f47; }
+html[data-theme="dark"] .income { color: #46b387; border-bottom-color: #33434a; background: #202b31; }
+html[data-theme="dark"] th,
+html[data-theme="dark"] td { border-bottom-color: #364952; }
+html[data-theme="dark"] th { background: #253a44; color: #7799a9; }
+html[data-theme="dark"] .expense-total { background: #1e282d; color: #b89e7a; border-top-color: #364952; }
+html[data-theme="dark"] .box-title { background: #202f36; color: #8aa3af; border-bottom-color: #2c3f47; }
+html[data-theme="dark"] .sum-row { border-bottom-color: #31424a; }
+html[data-theme="dark"] .summary { border-color: #384850; }
+html[data-theme="dark"] .green { color: #46b387; }
+html[data-theme="dark"] .red { color: #f7867d; }
 </style>
 </head>
 <body>
 <div class="page">
-  <h1 class="title">گزارش شارژ و هزینه‌های ساختمان</h1>
+
+  <header class="header">
+    <h1 class="title">گزارش شارژ و هزینه‌های ساختمان</h1>
+    <button class="theme-btn" id="themeBtn" type="button" aria-label="تغییر حالت روشن و تاریک">
+      <span id="themeIcon">🌙</span>
+    </button>
+  </header>
+
   <section class="grid" id="months"></section>
 
   <section class="bottom">
-    <div class="summary">
-      <div class="box-title">جمع صورتحساب تا پایان مرداد</div>
-      <div class="sum-row"><span>مجموع دریافتی ها:</span><span class="green">+ 99,900,000 تومان</span></div>
-      <div class="sum-row"><span>مجموع هزینه ها:</span><span class="red">- 105,531,800 تومان</span></div>
-      <div class="sum-row"><span>مانده (کسری):</span><span class="red">- 5,631,800 تومان</span></div>
-    </div>
+    <div class="summary" id="summary"></div>
   </section>
+
 </div>
 
 <script>
+/* ===== Theme ===== */
+const themeBtn  = document.getElementById("themeBtn");
+const themeIcon = document.getElementById("themeIcon");
+const root      = document.documentElement;
+
+function syncThemeBtn() {
+  const dark = root.getAttribute("data-theme") === "dark";
+  themeIcon.textContent = dark ? "☀️" : "🌙";
+  themeBtn.setAttribute("aria-pressed", dark ? "true" : "false");
+}
+
+themeBtn.addEventListener("click", () => {
+  const next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+  root.setAttribute("data-theme", next);
+  try { localStorage.setItem("theme", next); } catch (e) {}
+  syncThemeBtn();
+});
+syncThemeBtn();
+
+/* ===== Helpers ===== */
+const USE_PERSIAN_DIGITS = true; // اگر اعداد لاتین می‌خواهید false کنید
+
+const toFaDigits = s => String(s).replace(/\d/g, d => "۰۱۲۳۴۵۶۷۸۹"[d]);
+const digits     = s => USE_PERSIAN_DIGITS ? toFaDigits(s) : String(s);
+const toNum      = s => Number(String(s).replace(/,/g, "")) || 0;
+const fmt        = n => digits(n.toLocaleString("en-US"));
+
+/* ===== Data ===== */
 const months = [
-["1403/11/22","3,750,000",[["برق","1,050,000"],["شلنگ آب","1,500,000"],["شستشو","500,000"],["سرویس آسانسور","500,000"],["بیمه آسانسور","400,000"]],"3,950,000"],
-["1403/12/25","3,750,000",[["تعویض مخزن پمپ","750,000"],["تعمیر درب پارکینگ","500,000"],["شستشو","700,000"],["5 تا لامپ دیواری","150,000"],["تی خشک‌کن","220,000"],["قفل‌های جعبه ریموت و پشت‌بام","300,000"],["لامپ سقفی همکف، 20 عدد","1,160,000"]],"3,780,000"],
-["1404/01/25","3,750,000",[["برق","2,713,000"],["شستشو، 2 بار","1,400,000"],["سرویس آسانسور","500,000"],["یک متر توری برای کف‌کش","180,000"],["تابلو شماره واحدها","600,000"],["لوله کف‌کش","460,000"],["قفل برای اتاق آسانسور","950,000"]],"6,803,000"],
-["1404/03/01","3,750,000",[["شستشو","700,000"],["سرویس آسانسور","500,000"]],"1,200,000"],
-["1404/04/01","3,750,000",[["شستشو، 2 بار","1,700,000"],["سرویس آسانسور","500,000"],["روغن آسانسور، 4 لیتر","600,000"]],"2,800,000"],
-["1404/05/01","4,750,000",[["برق","8,600,000"],["شستشو","700,000"],["سرویس آسانسور","500,000"],["تعویض لامپ راهرو طبقه اول","50,000"]],"9,850,000"],
-["1404/06/01","4,750,000",[["سرویس آسانسور","500,000"],["شستشو","1,660,000"],["لامپ 25 وات، 3 عدد","357,000"]],"2,517,000"],
-["1404/07/01","4,250,000",[["سرویس آسانسور","500,000"],["قبض برق","4,884,000"],["رفع نشتی لوله آتش‌نشانی","200,000"]],"5,584,000"],
-["1404/08/01","4,750,000",[["شستشو","1,120,000"],["سرویس آسانسور","500,000"],["تی نخی و جارو","640,000"],["خاک‌انداز","50,000"],["کابل 2.5 برای پمپ، 2 متر","95,000"],["دوشاخه برق برای پمپ","70,000"]],"2,475,000"],
-["1404/09/01","4,750,000",[["سرویس آسانسور","500,000"],["شستشو","1,000,000"],["تعمیر پمپ آب","1,400,000"],["قبض برق","1,656,000"]],"4,556,000"],
-["1404/10/01","4,250,000",[["سرویس آسانسور","500,000"],["شستشو","1,000,000"],["قبض آب","1,077,300"],["شیشه‌پاک‌کن و دستمال","150,000"]],"2,727,300"],
-["1404/11/01","5,250,000",[["سرویس آسانسور","500,000"],["شستشو","1,000,000"],["قبض آب","658,500"],["قبض برق","2,428,000"],["بیمه آسانسور","363,000"],["2 عدد لامپ پشت‌بام","80,000"]],"5,029,500"],
-["1404/12/01","5,250,000",[["سرویس آسانسور","500,000"],["شستشو","1,200,000"],["تعویض سنسور درب","4,800,000"]],"6,500,000"],
-["1405/01/01","5,250,000",[["سرویس آسانسور","500,000"],["شستشو","1,000,000"],["قبض برق","2,212,000"],["قبض آب","1,341,200"]],"5,053,200"],
-["1405/02/01","5,250,000",[["سرویس آسانسور","500,000"],["شستشو","1,000,000"],["قبض آب","629,400"],["دیجیتال پمپ پشت‌بام","3,500,000"],["قبض برق","2,771,400"]],"8,400,800"],
-["1405/03/01","5,750,000",[["سرویس آسانسور","500,000"],["شستشو","1,000,000"],["تعمیر آسانسور","500,000"]],"2,000,000"],
-["1405/04/01","5,750,000",[["سرویس آسانسور","1,000,000"],["شستشو","1,500,000"],["گرفتگی فاضلاب","7,000,000"]],"9,500,000"],
-["1405/05/01","5,750,000",[["سرویس آسانسور","1,000,000"],["شستشو","1,000,000"],["قبض آب","3,500,000"]],"5,500,000"],
-["1405/06/01","7,350,000",[["سرویس آسانسور","1,000,000"],["شستشو","1,000,000"],["قبض برق","8,416,000"],["4 عدد لامپ 9 وات برای راه‌پله و پشت‌بام","600,000"],["تعمیر درب آسانسور","1,500,000"]],"12,516,000"],
-["1405/07/01","8,050,000",[["سرویس آسانسور","1,000,000"],["شستشو","1,000,000"],["قبض برق","2,790,000"]],"4,790,000"]
+["1403/11/22","3,750,000",[["برق","1,050,000"],["شلنگ آب","1,500,000"],["شستشو","500,000"],["سرویس آسانسور","500,000"],["بیمه آسانسور","400,000"]]],
+["1403/12/25","3,750,000",[["تعویض مخزن پمپ","750,000"],["تعمیر درب پارکینگ","500,000"],["شستشو","700,000"],["5 تا لامپ دیواری","150,000"],["تی خشک‌کن","220,000"],["قفل‌های جعبه ریموت و پشت‌بام","300,000"],["لامپ سقفی همکف، 20 عدد","1,160,000"]]],
+["1404/01/25","3,750,000",[["برق","2,713,000"],["شستشو، 2 بار","1,400,000"],["سرویس آسانسور","500,000"],["یک متر توری برای کف‌کش","180,000"],["تابلو شماره واحدها","600,000"],["لوله کف‌کش","460,000"],["قفل برای اتاق آسانسور","950,000"]]],
+["1404/03/01","3,750,000",[["شستشو","700,000"],["سرویس آسانسور","500,000"]]],
+["1404/04/01","3,750,000",[["شستشو، 2 بار","1,700,000"],["سرویس آسانسور","500,000"],["روغن آسانسور، 4 لیتر","600,000"]]],
+["1404/05/01","4,750,000",[["برق","8,600,000"],["شستشو","700,000"],["سرویس آسانسور","500,000"],["تعویض لامپ راهرو طبقه اول","50,000"]]],
+["1404/06/01","4,750,000",[["سرویس آسانسور","500,000"],["شستشو","1,660,000"],["لامپ 25 وات، 3 عدد","357,000"]]],
+["1404/07/01","4,250,000",[["سرویس آسانسور","500,000"],["قبض برق","4,884,000"],["رفع نشتی لوله آتش‌نشانی","200,000"]]],
+["1404/08/01","4,750,000",[["شستشو","1,120,000"],["سرویس آسانسور","500,000"],["تی نخی و جارو","640,000"],["خاک‌انداز","50,000"],["کابل 2.5 برای پمپ، 2 متر","95,000"],["دوشاخه برق برای پمپ","70,000"]]],
+["1404/09/01","4,750,000",[["سرویس آسانسور","500,000"],["شستشو","1,000,000"],["تعمیر پمپ آب","1,400,000"],["قبض برق","1,656,000"]]],
+["1404/10/01","4,250,000",[["سرویس آسانسور","500,000"],["شستشو","1,000,000"],["قبض آب","1,077,300"],["شیشه‌پاک‌کن و دستمال","150,000"]]],
+["1404/11/01","5,250,000",[["سرویس آسانسور","500,000"],["شستشو","1,000,000"],["قبض آب","658,500"],["قبض برق","2,428,000"],["بیمه آسانسور","363,000"],["2 عدد لامپ پشت‌بام","80,000"]]],
+["1404/12/01","5,250,000",[["سرویس آسانسور","500,000"],["شستشو","1,200,000"],["تعویض سنسور درب","4,800,000"]]],
+["1405/01/01","5,250,000",[["سرویس آسانسور","500,000"],["شستشو","1,000,000"],["قبض برق","2,212,000"],["قبض آب","1,341,200"]]],
+["1405/02/01","5,250,000",[["سرویس آسانسور","500,000"],["شستشو","1,000,000"],["قبض آب","629,400"],["دیجیتال پمپ پشت‌بام","3,500,000"],["قبض برق","2,771,400"]]],
+["1405/03/01","5,750,000",[["سرویس آسانسور","500,000"],["شستشو","1,000,000"],["تعمیر آسانسور","500,000"]]],
+["1405/04/01","5,750,000",[["سرویس آسانسور","1,000,000"],["شستشو","1,500,000"],["گرفتگی فاضلاب","7,000,000"]]],
+["1405/05/01","5,750,000",[["سرویس آسانسور","1,000,000"],["شستشو","1,000,000"],["قبض آب","3,500,000"]]],
+["1405/06/01","7,350,000",[["سرویس آسانسور","1,000,000"],["شستشو","1,000,000"],["قبض برق","8,416,000"],["4 عدد لامپ 9 وات برای راه‌پله و پشت‌بام","600,000"],["تعمیر درب آسانسور","1,500,000"]]],
+["1405/07/01","8,050,000",[["سرویس آسانسور","1,000,000"],["شستشو","1,000,000"],["قبض برق","2,790,000"]]]
 ];
 
-const el = document.getElementById("months");
-months.forEach((m)=>{
-  const card=document.createElement("article");
-  card.className="card";
-  card.innerHTML=`
-    <div class="date">${m[0]}</div>
-    <div class="income">دریافتی: ${m[1]} تومان</div>
+/* ===== Render cards + totals ===== */
+const monthsEl = document.getElementById("months");
+let totalIncome = 0;
+let totalExpense = 0;
+
+months.forEach(([date, income, items]) => {
+  const incomeNum   = toNum(income);
+  const monthExpense = items.reduce((sum, [, amount]) => sum + toNum(amount), 0);
+
+  totalIncome  += incomeNum;
+  totalExpense += monthExpense;
+
+  const rows = items.map(([name, amount], i) => `
+    <tr>
+      <td>${digits(i + 1)}</td>
+      <td>${name}</td>
+      <td>${fmt(toNum(amount))}</td>
+    </tr>`).join("");
+
+  const card = document.createElement("article");
+  card.className = "card";
+  card.innerHTML = `
+    <div class="date">${digits(date)}</div>
+    <div class="income">دریافتی: ${fmt(incomeNum)} تومان</div>
     <table>
-      <thead><tr><th>ردیف</th><th>شرح هزینه</th><th>مبلغ (تومان)</th></tr></thead>
-      <tbody>${m[2].map((x,i)=>`<tr><td>${i+1}</td><td>${x[0]}</td><td>${x[1]}</td></tr>`).join("")}</tbody>
+      <thead>
+        <tr><th>ردیف</th><th>شرح هزینه</th><th>مبلغ (تومان)</th></tr>
+      </thead>
+      <tbody>${rows}</tbody>
     </table>
-    <div class="expense-total">جمع هزینه‌های این ماه: ${m[3]} تومان</div>
+    <div class="expense-total">جمع هزینه‌های این ماه: ${fmt(monthExpense)} تومان</div>
   `;
-  el.appendChild(card);
+  monthsEl.appendChild(card);
 });
+
+/* ===== Summary ===== */
+const balance   = totalIncome - totalExpense;
+const isSurplus = balance >= 0;
+const lastDate  = months[months.length - 1][0];
+
+document.getElementById("summary").innerHTML = `
+  <div class="box-title">جمع صورتحساب تا پایان ${digits(lastDate)}</div>
+  <div class="sum-row">
+    <span>مجموع دریافتی‌ها:</span>
+    <span class="green">+ ${fmt(totalIncome)} تومان</span>
+  </div>
+  <div class="sum-row">
+    <span>مجموع هزینه‌ها:</span>
+    <span class="red">- ${fmt(totalExpense)} تومان</span>
+  </div>
+  <div class="sum-row">
+    <span>${isSurplus ? "مانده (مازاد)" : "مانده (کسری)"}:</span>
+    <span class="${isSurplus ? "green" : "red"}">${fmt(Math.abs(balance))} تومان</span>
+  </div>
+`;
 </script>
 </body>
 </html>
